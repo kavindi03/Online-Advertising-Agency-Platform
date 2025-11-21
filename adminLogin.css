@@ -1,0 +1,143 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling: Flexbox centering with a soft gradient background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #d4e0f0, #f5f5f5);
+  overflow: hidden;
+}
+
+/* SignUp Wrapper: Container for the login form */
+.signUp-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.3); /* Subtle overlay effect */
+}
+
+/* Form Styling: White background with shadow, rounded corners */
+.signUp-form-wrapper {
+  background: #fff;
+  width: 400px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Close Button for Form */
+.signUp-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff6b6b;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.6);
+}
+
+.signUp-close:hover {
+  background: #ff3b3b;
+}
+
+/* Form Title Styling */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #1e3a8a; /* Deep blue color */
+  font-weight: 700;
+}
+
+/* Input Group Styling: Positioning and floating label */
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #555;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #d4e0f0;
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #1e3a8a; /* Border changes to deep blue on focus */
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -5px;
+  font-size: 12px;
+  background: white;
+  padding: 0 5px;
+  color: #1e3a8a;
+}
+
+/* Button Styling */
+.btn {
+  width: 100%;
+  padding: 12px 0;
+  background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%); /* Gradient background for buttons */
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(145deg, #7d42b8, #d3a59f); /*change background on hover*/
+  /* box-shadow: 0 8px 15px rgba(30, 58, 138, 0.3); */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .signUp-form-wrapper {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+/* Background Gradient */
+body {
+   
+  background-image: url('images/loginbackground.jpg'); /* Add the path to your image here */
+  background-size: cover; /* Ensures the image covers the entire background */
+   /* Prevent the image from repeating */
+  
+}

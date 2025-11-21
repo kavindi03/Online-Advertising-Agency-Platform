@@ -1,0 +1,276 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    scroll-behavior: smooth;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    color:#ccc;
+  }
+
+/* Setting full height for the HTML and body */
+html, body {
+    height: 100%; /* Make sure the body and HTML fill the full height of the viewport */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Using Poppins font */
+    /* Background image covering the full viewport */
+    background-image:url('../FAQ/images/Wave04-01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Remove padding to allow the background to touch the footer */
+    padding-top: 110px; /* Added top padding to give space for the fixed header */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    position: relative; /* Positioning for the pseudo-element */
+    padding: 5px 0; /* Add padding for spacing */
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center; /* Align logo image and text vertically */
+}
+
+/* Adjusting logo size inside the navbar */
+.navbar .logo img {
+    height: 70px; /* Adjust the height to fit your design */
+    width: auto;  /* Auto width to maintain aspect ratio */
+    max-width: 150px; /* Optional: Set a max-width to control large logos */
+    margin-right: 10px; /* Reduce the gap between logo and SAKURA text */
+}
+
+@media (max-width: 768px) {
+    /* For smaller screens, reduce the logo size */
+    .navbar .logo img {
+        height: 40px;
+    }
+}
+
+/* Underline effect */
+.navibar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Underline thickness */
+    background-color: #77A5F8; /* Underline color */
+    transform: scaleX(0); /* Start with the underline scaled down */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Show the underline on hover */
+.navibar a:hover::after {
+    transform: scaleX(1); /* Scale the underline to full width */
+}
+
+.navbar .cta-btn {
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%); /* Gradient background for buttons */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .cta-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #7d42b8, #d3a59f); /* Change background on hover */
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(145deg, #D5A3FF, #77A5F8);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    color: #fff; /* To make the text readable on the gradient */
+}
+
+footer p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Profile Section Styling */
+.container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-header img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-header h2 {
+    font-size: 28px;
+    color: #04080c;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    font-size: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #0a0b0b;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea,
+form button {
+    background: linear-gradient(145deg, #dbd8de 0%, #f877cb 100%,#7c3bbc 50%);
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    font-size: 14px;
+}
+.my-activity textarea {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px ;
+    border-radius: 4px;
+    width: 100%; /* Full width for responsiveness */
+   
+}
+
+.my-activity p#comments-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #070404;
+}
+
+.my-activity {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px;
+    border-radius: 8px;
+}
+
+.my-activity h2 {
+    font-size: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #0a0b0b;
+    
+}
+
+.my-activity label {
+    font-weight: bold;
+    margin-top: 10px;
+   
+}
+
+.my-activity input[type="file"] {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%);
+}
+
+.my-activity p#file-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+form button {
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%);
+    color: rgb(15, 10, 10);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #7d42b8, #d3a59f); /* Hover effect for submit button */
+}
+
+form textarea {
+    margin-top: 16px;
+}
+
+/* Order Details Styling */
+#order-details {
+    display:none;
+
+}
+
+/* Background Gradient */
+body {
+    background: radial-gradient(
+        circle,
+        #ffc0b8 0%,  /* Color stop #1 at 0% */
+        #7d42b8 100% /* Color stop #2 at 100% */
+    );
+}

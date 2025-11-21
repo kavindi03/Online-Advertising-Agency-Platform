@@ -1,0 +1,252 @@
+/* Internal CSS for the page layout and design */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    backdrop-filter: blur(12px);
+    scroll-behavior: smooth;
+    transition: all 0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    color:#ccc;
+  }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    position: relative; /* Positioning for the pseudo-element */
+    padding: 5px 0; /* Add padding for spacing */
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center; /* Align logo image and text vertically */
+}
+
+/* Adjusting logo size inside the navbar */
+.navbar .logo img {
+    height: 70px; /* Adjust the height to fit your design */
+    width: auto;  /* Auto width to maintain aspect ratio */
+    max-width: 150px; /* Optional: Set a max-width to control large logos */
+    margin-right: 10px; /* Reduce the gap between logo and SAKURA text */
+}
+
+@media (max-width: 768px) {
+    /* For smaller screens, reduce the logo size */
+    .navbar .logo img {
+        height: 40px;
+    }
+}
+
+/* Underline effect */
+.navibar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Underline thickness */
+    background-color: #77A5F8; /* Underline color */
+    transform: scaleX(0); /* Start with the underline scaled down */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Show the underline on hover */
+.navibar a:hover::after {
+    transform: scaleX(1); /* Scale the underline to full width */
+}
+
+.navbar .cta-btn {
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%); /* Gradient background for buttons */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .cta-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #7d42b8, #d3a59f); /* Change background on hover */
+}
+
+/* Hero Section */
+body, html {
+    height: 100%; /* Ensure the page takes full height */
+}
+
+.navContainer {
+    position: fixed;
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    padding-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #100f0f;
+    z-index: 1; /* Ensures the content is above the blur */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif; 
+   
+}
+
+.highlight {
+    color: #0609a6; /* Highlight color for specific text */
+    
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(145deg, #D5A3FF, #77A5F8);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    color: #fff; /* To make the text readable on the gradient */
+}
+
+footer p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Feedback Form Styling */
+.feedback-container {
+    
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 250px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
+    max-width: 400px;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #0a0b0d; /* Title color for feedback section */
+}
+
+label {
+    margin-top: 15px;
+    display: block;
+    font-size: 14px;
+    text-align: left;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+button {
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%);
+    color: rgb(17, 8, 8);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #7d42b8, #d3a59f); /* Hover effect for submit button */
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.star {
+    font-size: 25px;
+    color: #110404;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star:hover, .star.selected {
+    color: hwb(62 4% 0%); /* Color for selected stars */
+}
+
+#thanksMessage {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #0e033a;
+}
+
+/* Background Gradient */
+.container {
+    background-image: url('../feedback/images/newfeedbackBG.jpg');
+    width: 100%;
+    height: 110%;
+    backdrop-filter: blur(8px);
+}
+
+

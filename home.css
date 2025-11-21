@@ -1,0 +1,445 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    color:#ccc;
+}
+
+a:hover {
+    color: #da325c;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    position: relative; /* Positioning for the pseudo-element */
+    padding: 5px 0; /* Add padding for spacing */
+}
+
+.navbar .logo{
+    display: flex;
+    align-items: center; /* Align logo image and text vertically */
+
+}
+
+/* Adjusting logo size inside the navbar */
+.navbar .logo img {
+    height: 70px; /* Adjust the height to fit your design */
+    width: auto;  /* Auto width to maintain aspect ratio */
+    max-width: 150px; /* Optional: Set a max-width to control large logos */
+    margin-right: 10px; /* Reduce the gap between logo and SAKURA text */
+}
+
+@media (max-width: 768px) {
+    /* For smaller screens, reduce the logo size */
+    .navbar .logo img {
+        height: 40px;
+    }
+}
+
+
+/* Underline effect */
+.navibar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Underline thickness */
+    background-color: #77A5F8; /* Underline color */
+    transform: scaleX(0); /* Start with the underline scaled down */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Show the underline on hover */
+.navibar a:hover::after {
+    transform: scaleX(1); /* Scale the underline to full width */
+}
+
+.navbar .cta-btn {
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%); /* Gradient background for buttons */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .cta-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #7d42b8, #d3a59f); /*change background on hover*/
+}
+
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('Images/backgroundMain.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #ccc;
+    animation: slideInFromRight 1.5s ease-in-out;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+
+.stats div {
+    font-size: 2rem;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.stats div:hover {
+    transform: scale(1.1);
+}
+
+/* About Us Section */
+.about {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Process Section */
+.process {
+    padding: 100px 50px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.process h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+}
+
+.steps .step {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.steps .step:hover {
+    transform: scale(1.05);
+}
+
+.steps img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Service Section */
+.services {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: #111;
+    color: white;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service {
+    width: 30%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+    transform: scale(1.05);
+}
+
+.service i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color:       
+        #65abaf;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 100px 50px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+/* erros 2k pennuwata case ekk nah thiynna ewa */
+.testimonials h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background: linear-gradient(to right, #D5A3FF, #77A5F8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text {
+    font-size: 60px;
+    background: linear-gradient(to right, #D5A3FF, #77A5F8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.testimonial {
+    width: 45%;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
+    transition: all 0.3s ease; /* Smooth transition */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Adjust margin for vertical centering */
+    padding: 30px 20px;
+    border-radius: 8px; /* Rounded corners */
+    border: none;
+    width: 30%; 
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+    animation: fadeIn 0.4s; /* Fade-in animation */
+  }
+  
+  /* Add animation for the modal appearance */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .modal-content button {
+    margin: 15px;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .modal-content button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .modal-content button:active {
+    transform: scale(0.98); /* Pressed down effect */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -20px;
+  }
+  
+  .close:hover, .close:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+        padding: 20px;
+    }
+  
+    .modal-content h2 {
+        font-size: 20px;
+    }
+  
+    .modal-content button {
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+  }
+  
+  /* Tablet Responsiveness */
+  @media (max-width: 1024px) {
+    .modal-content {
+        width: 50%;
+    }
+  }
+  
+  /*footer styling*/
+  footer {
+    background: linear-gradient(145deg, #D5A3FF, #77A5F8);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    color: #fff; /* To make the text readable on the gradient */
+}
+
+  
+  footer p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .social-media {
+    margin-top: 10px;
+  }
+  
+  .social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-media a:hover {
+    color: #007bff; /* Change color on hover */
+  }

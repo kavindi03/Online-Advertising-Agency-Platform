@@ -1,0 +1,10 @@
+<?php
+
+$con=new mysqli("localhost","root","","onlineads");
+
+if($con->connect_error)
+{
+    die("connection faild".$con->connect_error);
+}
+
+?>

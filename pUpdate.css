@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Light background */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px; /* Space below the title */
+}
+
+.form-container {
+    max-width: 500px; /* Container width */
+    margin: auto; /* Center the container */
+    background-color: white; /* White background for form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Inner padding */
+}
+
+.input-group {
+    margin-bottom: 20px; /* Space between input groups */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold; /* Bold labels */
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px; /* More padding for comfort */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+    transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    outline: none; /* Removes the default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow on focus */
+}
+
+.btn {
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%); /* Gradient background for buttons */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Button takes full width */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {    
+  background: linear-gradient(145deg, #7d42b8, #d3a59f); /*change background on hover*/
+      
+}
+
+.btn:active {
+           background: linear-gradient(145deg, #7d42b8, #d3a59f); /*change background on hover*/
+}
+
+@media (min-width: 600px) {
+    .form-container {
+        padding: 40px; /* More padding on larger screens */
+    }
+
+    .input-group {
+        margin-bottom: 25px; /* Increase space on larger screens */
+    }
+}
+/* Background pink shade */
+body {
+    background: radial-gradient(
+      circle,
+      #ffc0b8 0%,  /* Starting color for gradient */
+      #7d42b8 100% /* Ending color for gradient */
+    );
+  }
+  

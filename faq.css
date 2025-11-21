@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    scroll-behavior: smooth;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    color:#ccc;
+  }
+
+/* Setting full height for the HTML and body */
+html, body {
+    height: 100%; /* Make sure the body and HTML fill the full height of the viewport */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Using Poppins font */
+    /* Background image covering the full viewport */
+    background-image:url('../FAQ/images/Wave04-01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Remove padding to allow the background to touch the footer */
+    padding-top: 110px; /* Added top padding to give space for the fixed header */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    position: relative; /* Positioning for the pseudo-element */
+    padding: 5px 0; /* Add padding for spacing */
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center; /* Align logo image and text vertically */
+}
+
+/* Adjusting logo size inside the navbar */
+.navbar .logo img {
+    height: 70px; /* Adjust the height to fit your design */
+    width: auto;  /* Auto width to maintain aspect ratio */
+    max-width: 150px; /* Optional: Set a max-width to control large logos */
+    margin-right: 10px; /* Reduce the gap between logo and SAKURA text */
+}
+
+@media (max-width: 768px) {
+    /* For smaller screens, reduce the logo size */
+    .navbar .logo img {
+        height: 40px;
+    }
+}
+
+/* Underline effect */
+.navibar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Underline thickness */
+    background-color: #77A5F8; /* Underline color */
+    transform: scaleX(0); /* Start with the underline scaled down */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Show the underline on hover */
+.navibar a:hover::after {
+    transform: scaleX(1); /* Scale the underline to full width */
+}
+
+.navbar .cta-btn {
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%); /* Gradient background for buttons */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .cta-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #7d42b8, #d3a59f); /* Change background on hover */
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(145deg, #D5A3FF, #77A5F8);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    color: #fff; /* To make the text readable on the gradient */
+}
+
+footer p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+
+/* Main Wrapper */
+.main-wrapper {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    min-height: 100vh; /* Ensure it takes up at least the full viewport height */
+}
+
+/* Container for content */
+.container {
+    max-width: 1200px; /* Maximum width of container */
+    margin: 0 auto; /* Center container */
+    padding: 1rem; /* Padding inside the container */
+}
+
+/* FAQ Title Styling */
+.faq-title h1 {
+    margin: 3rem 0 2.4rem 0; /* Spacing around FAQ title */
+    text-align: center; /* Center the FAQ title */
+    text-transform: capitalize; /* Capitalize first letters */
+}
+
+/* FAQ Content Styling */
+.faq-content {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 100%; /* Single column on smaller screens */
+    row-gap: 1rem; /* Space between FAQ items */
+}
+
+.faq-right-content, .faq-left-content {
+    padding: 1.2rem; /* Padding for both content areas */
+}
+
+.faq-left-content {
+    text-align: center; /* Center align left content */
+}
+
+.faq-left-content img {
+    width: 75%; /* Set image size */
+    display: block; /* Ensure it's treated as a block element */
+    margin: 1rem auto; /* Center the image */
+}
+
+.faq-left-content p {
+    font-weight: 400; /* Normal font weight */
+    opacity: 0.95; /* Slight transparency */
+    max-width: 400px; /* Limit paragraph width */
+    margin: 0 auto; /* Center paragraph */
+    line-height: 1.8; /* Increase line spacing for readability */
+}
+
+/* Individual FAQ Item */
+.faq-item {
+    margin-bottom: 1rem; /* Space between FAQ items */
+}
+
+/* FAQ Item Header */
+.faq-item-head {
+    color: #fff; /* White text */
+    border-bottom: 4px solid rgba(86, 30, 175, 0.8); /* Bottom border for header */
+    margin-bottom: 0.8rem; /* Space below header */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically align header items */
+    justify-content: space-between; /* Space between question and icon */
+    background-image: linear-gradient(90deg, #330b44 0%, #6361c4 100%); /* Gradient background */
+    box-shadow: 0 0 5px 0 rgb(255, 88, 96, 0.5); /* Soft shadow around item */
+    opacity: 0.85; /* Semi-transparent */
+    padding: 0.6rem 1rem; /* Padding inside header */
+    border-radius: 9px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.faq-item-head:hover {
+    box-shadow: 0 0 15px 0 rgb(255, 88, 96, 0.5); /* Larger shadow on hover */
+}
+
+/* FAQ Toggle Icon */
+.faq-item-icon {
+    cursor: pointer; /* Pointer cursor for icons */
+}
+
+/* FAQ Item Body */
+.faq-item-body {
+    overflow: hidden; /* Hide body content initially */
+    max-height: 0; /* Collapse body content */
+    background: rgba(255, 88, 96, 0.1); /* Slight background color */
+    border-radius: 2px; /* Slightly rounded corners */
+    transition: all 0.3s ease; /* Smooth transition when expanding */
+}
+
+.faq-item-body p {
+    font-weight: 300; /* Light font weight */
+    padding: 1rem; /* Padding inside the FAQ answer */
+}
+
+/* Class to show FAQ body */
+.show-para {
+    max-height: 1000px; /* Set maximum height when expanded */
+}
+
+/* Responsive Styling for larger screens */
+@media screen and (min-width: 800px) {
+    .faq-left-content {
+        text-align: left; /* Left align content */
+    }
+    .faq-left-content img {
+        margin-left: 0; /* Reset image alignment */
+    }
+    .faq-left-content p {
+        margin-left: 0; /* Reset text alignment */
+        max-width: 460px; /* Increase paragraph width */
+    }
+    .faq-content {
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout on larger screens */
+    }
+}
+.faq-intro button {
+    padding: 10px 20px; /* Padding inside button */
+    background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%); /* Gradient background for buttons */
+    color: rgb(255, 255, 255); /* White text for button */
+    border-style: double; /* Double border style */
+    border-radius: 50px; /* Large rounded corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth background color change on hover */
+  }
+  
+  .faq-intro button:hover{
+    background: linear-gradient(145deg, #7d42b8, #d3a59f);
+  }
+  .intro {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No borders */
+    color: white; /* White text */
+    padding: 12px 24px; /* Padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it inline-block */
+    font-size: 16px; /* Font size */
+    margin: 10px 5px; /* Margin around buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+.intro:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.intro:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); /* Green shadow on focus */
+}
